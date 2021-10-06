@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT cookbook (description,(recipe+))>
+
+<!ELEMENT description (#PCDATA)>
+
+<!-- <!ELEMENT recipe (title,course,cuisine,ingredients,preparation,nutrition,preptime?,cooktime?,totaltime,comment?)> -->
+
+<!ELEMENT recipe (title,GRAPHIC,course,cuisine,ingredients,preparation,nutrition,preptime?,cooktime?,totaltime,comment?)> 
+
+<!ELEMENT title 	(#PCDATA)>
+
+<!ELEMENT GRAPHIC EMPTY>
+
+<!ATTLIST GRAPHIC
+
+       url CDATA #REQUIRED
+
+       width CDATA #IMPLIED
+
+       height CDATA #IMPLIED
+
+> 
+
+<!ELEMENT course 	(#PCDATA)>
+<!ELEMENT cuisine 	(#PCDATA)>
+<!ATTLIST cuisine type (American| Mexican| Italian| French| Indian) #REQUIRED>
+
+<!ELEMENT ingredients (ingredient+)>
+
+<!ELEMENT ingredient (name, amount, unit)+>
+<!ELEMENT name 			(#PCDATA)>
+<!ELEMENT amount 		(#PCDATA)>
+<!ELEMENT unit 			(#PCDATA)>
+
+<!ELEMENT preparation (step+)>
+
+<!ELEMENT step (#PCDATA)>
+
+<!ELEMENT nutrition (protein, carbohydrates, fat, calories)>
+<!ELEMENT protein 		(#PCDATA)>
+<!ELEMENT carbohydrates 	(#PCDATA)>
+<!ELEMENT fat 			(#PCDATA)>
+<!ELEMENT calories 		(#PCDATA)>
+
+<!ELEMENT preptime (#PCDATA)>
+<!ELEMENT cooktime (#PCDATA)>
+<!ELEMENT totaltime (#PCDATA)>
+
+<!ELEMENT comment (#PCDATA)>
